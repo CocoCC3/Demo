@@ -16,36 +16,42 @@ MonoBehaviour:
   - cubePieceData:
       cubePieceObj: {fileID: 3846258268154422356, guid: 7711dce8a4c7246d28f0d179003a54a4, type: 3}
       cubeColor: {r: 0, g: 0, b: 0, a: 1}
-      forcePower: 4
-      duration: 1
-      randomExpoValue: 5
+      forcePower: 6
+      duration: 1.2
+      randomExpoValue: 4
   - cubePieceData:
       cubePieceObj: {fileID: 3846258268154422356, guid: 7711dce8a4c7246d28f0d179003a54a4, type: 3}
       cubeColor: {r: 0.15178537, g: 1, b: 0, a: 1}
       forcePower: 4
-      duration: 1
+      duration: 1.1
       randomExpoValue: 5
   - cubePieceData:
       cubePieceObj: {fileID: 3846258268154422356, guid: 7711dce8a4c7246d28f0d179003a54a4, type: 3}
       cubeColor: {r: 1, g: 0, b: 0, a: 1}
-      forcePower: 4
+      forcePower: 7
       duration: 1
-      randomExpoValue: 5
+      randomExpoValue: 7
   - cubePieceData:
       cubePieceObj: {fileID: 3846258268154422356, guid: 7711dce8a4c7246d28f0d179003a54a4, type: 3}
       cubeColor: {r: 0.99285436, g: 1, b: 0, a: 1}
       forcePower: 4
-      duration: 1
-      randomExpoValue: 5
+      duration: 0.9
+      randomExpoValue: 6
   - cubePieceData:
       cubePieceObj: {fileID: 3846258268154422356, guid: 7711dce8a4c7246d28f0d179003a54a4, type: 3}
       cubeColor: {r: 0.6938939, g: 0, b: 1, a: 1}
-      forcePower: 4
-      duration: 1
-      randomExpoValue: 5
+      forcePower: 5
+      duration: 1.3
+      randomExpoValue: 4
   - cubePieceData:
       cubePieceObj: {fileID: 3846258268154422356, guid: 7711dce8a4c7246d28f0d179003a54a4, type: 3}
       cubeColor: {r: 0, g: 0.011662006, b: 1, a: 1}
-      forcePower: 4
-      duration: 1
+      forcePower: 6
+      duration: 1.15
       randomExpoValue: 5
+  - cubePieceData:
+      cubePieceObj: {fileID: 3846258268154422356, guid: 7711dce8a4c7246d28f0d179003a54a4, type: 3}
+      cubeColor: {r: 0, g: 1, b: 0.6102462, a: 1}
+      forcePower: 6
+      duration: 1.3
+      randomExpoValue: 7

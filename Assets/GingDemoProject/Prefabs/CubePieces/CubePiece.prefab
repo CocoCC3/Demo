@@ -142,6 +142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebb05074c9e49e0b7f225467fcb54f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainRig: {fileID: 0}
+  _mainCol: {fileID: 0}
+  _mainMesh: {fileID: 0}
+  _myCubeData: {fileID: 0}
 --- !u!114 &3463258574808362436
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,12 +38,15 @@ public class PlayerStackController : MonoBehaviour
             
             GameObject cubePiece = objData.collectedCubePiece;
             Vector3 targetPos = new Vector3(0, i * 0.45f, 0.8f);
-            cubePiece.transform.DOKill();
-            cubePiece.transform.DOLocalJump(targetPos, 1, 1, 0.2f).OnComplete(()=> cubePiece.transform.DORotate(Vector3.zero, 0.1f));
-            objData.statue = true;
+            cubePiece.transform.DOLocalMoveY(0.5f, 0.15f).OnComplete(() =>
+            {
+                cubePiece.transform.DOKill();
+                cubePiece.transform.DOLocalJump(targetPos, 1, 1, 0.2f).OnComplete(()=> cubePiece.transform.DOLocalRotate(Vector3.zero, 0.1f));
+                objData.statue = true;
+            });
         }
     }
-
+    
     public void AddCubeToList(PlayerStackClass playerStackClassData)
     {
         playerStackDataList.Add(playerStackClassData);
@@ -63,9 +66,9 @@ public class PlayerStackController : MonoBehaviour
             if (botStayData.statue) continue;
 
             Vector3 targetPos;
-            if (i == 0) { targetPos = new Vector3(1, 0f, 0f);}//1
-            else if (i == 1) { targetPos = new Vector3(2f, 0f, 0f);}//2
-            else { targetPos = new Vector3(i + 1f, 0f, 0f);}// 3
+            if (i == 0) { targetPos = new Vector3(0f, 0f, -1.5f);}//1
+            else if (i == 1) { targetPos = new Vector3(0f, 0f, -2.5f);}//2
+            else { targetPos = new Vector3(0f, 0f, (i + 1.5f) * -1f);}// 3
             var stackTrans = Instantiate(new GameObject(), targetPos, Quaternion.identity);
             stackTrans.transform.SetParent(transform);
             stackTrans.transform.localPosition = targetPos;

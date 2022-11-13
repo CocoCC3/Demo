@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         TrPlayer = GetComponent<Transform>();
         _controller = TrPlayer.GetComponent<CharacterController>();
         _mainCol = GetComponent<Collider>();
-        anim = GetComponent<Animator>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
     
     public void Start()
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
             if (_isGrounded && _velocity.y < 0)
                 _velocity.y = 0f;
-            Vector3 move = new Vector3(VerticalInput, 0, HorizontalInput);
+            Vector3 move = new Vector3(-HorizontalInput, 0, -VerticalInput);
             if(_controller.enabled)
                 _controller.Move(move * Time.deltaTime * Speed);
             if (move != Vector3.zero)

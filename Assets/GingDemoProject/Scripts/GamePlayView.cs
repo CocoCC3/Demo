@@ -15,6 +15,7 @@ public class GamePlayView : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            if (!isMoving) { EventManager.ChildBotAction(true);}
             HorizantalDir = (JoystickData.Direction.y >= 0) ? 1 : -1;
             if (HorizantalDir > 0)
             {
@@ -32,6 +33,7 @@ public class GamePlayView : MonoBehaviour
         }
         else
         {
+            if (isMoving) { EventManager.ChildBotAction(false);}
             InputData.InputVector = Vector2.zero;
             InputData.angle = 0;
             isMoving = false;

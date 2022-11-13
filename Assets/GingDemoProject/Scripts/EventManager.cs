@@ -17,4 +17,11 @@ public class EventManager : MonoBehaviour
     {
         onInputChange?.Invoke(isMoving);
     }
+    
+    public delegate void ChildBot(bool isMoving);
+    public static event ChildBot OnChildBotAction;
+    public static void ChildBotAction(bool isMoving)
+    {
+        OnChildBotAction?.Invoke(isMoving);
+    }
 }

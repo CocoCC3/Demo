@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Constants;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerCollider : MonoBehaviour
 {
@@ -25,13 +26,15 @@ public class PlayerCollider : MonoBehaviour
     {
         Debug.Log(other.gameObject.name);
         var cubeInteract = other.GetComponent<ICubeSpawnerInteract>();
-        cubeInteract.CubeTriggerAction(10);
+        var randomSize = Random.Range(10, 18);
+        cubeInteract.CubeTriggerAction(randomSize);
     }
     
     void CollectableObjectTrigger(Collider other)
     {
         Debug.Log("CollectCubePiece" + " / " + other.gameObject.name);
         var cubePieceData = other.GetComponent<ICubePieceInteract>();
+        if (cubePieceData == null) return;
         cubePieceData.FlyToPlayerStackPosition(_playerStackController);
         index++;
     }
@@ -40,6 +43,7 @@ public class PlayerCollider : MonoBehaviour
     {
         Debug.Log("TriggerWithBot" + " / " + other.gameObject.name);
         var botData = other.GetComponent<IBotInteract>();
+        if (botData == null) return;
         botData.AddBotToList(_playerStackController);
         botData.BotTriggerAction(_playerStackController.GetBotFollowTransformAndModify(), transform);
     }
